@@ -6,7 +6,7 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <Header />
+      <Header branding="Contact Manager" />
       <Contact name="John Doe" email="jdoe@gmail.com" phone="555-555-5555" />
       <Contact name="Kane Smith" email="kane@gmail.com" phone="333-333-3333" />
     </div>
