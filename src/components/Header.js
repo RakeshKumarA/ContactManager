@@ -14,6 +14,8 @@ Header.defaultProps = {
   branding: 'My App'
 };
 
+// New changes
+
 Header.propTypes = {
   branding: PropTypes.string.isRequired
 };
