@@ -4,13 +4,16 @@ import { Consumer } from '../../context';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSortDown } from '@fortawesome/free-solid-svg-icons';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
+import axios from 'axios';
 
 class Contact extends Component {
   state = {
     showContactInfo: false
   };
 
-  onDeleteClick = (id, dispatch) => {
+  onDeleteClick = async (id, dispatch) => {
+    await axios.delete(`https://jsonplaceholder.typicode.com/posts/${id}`);
+
     dispatch({ type: 'DELETE_CONTACT', payload: id });
   };
 
