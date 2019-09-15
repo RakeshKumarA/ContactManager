@@ -4,6 +4,8 @@ import { Consumer } from '../../context';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSortDown } from '@fortawesome/free-solid-svg-icons';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
+import { faPencilAlt } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 class Contact extends Component {
@@ -21,6 +23,7 @@ class Contact extends Component {
     const { id, name, email, phone } = this.props.contact;
     const sortdownicon = <FontAwesomeIcon icon={faSortDown} />;
     const crossicon = <FontAwesomeIcon icon={faTimes} />;
+    const pencilicon = <FontAwesomeIcon icon={faPencilAlt} />;
     const { showContactInfo } = this.state;
 
     return (
@@ -47,6 +50,18 @@ class Contact extends Component {
                 >
                   {crossicon}
                 </i>
+                <Link to={`contact/edit/${id}`}>
+                  <i
+                    style={{
+                      cursor: 'pointer',
+                      float: 'right',
+                      color: 'black',
+                      marginRight: '1rem'
+                    }}
+                  >
+                    {pencilicon}
+                  </i>
+                </Link>
               </h4>
               {showContactInfo ? (
                 <ul className="list-group">
